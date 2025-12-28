@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '100mb', // Allow large file uploads
     },
   },
+  // Ensure proper output for Netlify deployment
+  output: 'standalone',
 };
 
 export default nextConfig;

@@ -105,16 +105,18 @@ Before deploying, ensure you have set:
 - [ ] `ADMIN_USERNAME` (changed from default)
 - [ ] `ADMIN_PASSWORD` (strong password, changed from default)
 
-## Optional Variables
+## Optional Variables (NOT REQUIRED for Netlify)
 
-These are NOT required for Netlify deployment but can be kept for Azure integration:
+These variables are **ONLY needed for local development** when using the `azd` (Azure Developer CLI) tool. **Do NOT add these to Netlify:**
 
 ```
-AZURE_ENV_NAME
-AZURE_LOCATION
-AZURE_SUBSCRIPTION_ID
-DATABASE_URL
+AZURE_ENV_NAME          # Only for azd local development
+AZURE_LOCATION          # Only for azd local development
+AZURE_SUBSCRIPTION_ID   # Only for azd local development
+DATABASE_URL            # Not currently used by the application
 ```
+
+**Important:** These variables are not read by the application code and adding them to Netlify will have no effect. They are only used by the `azd` CLI tool during local provisioning and development.
 
 ## Troubleshooting
 
