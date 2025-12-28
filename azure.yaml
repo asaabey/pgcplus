@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: pgcplus
+metadata:
+  template: pgcplus@0.0.1
+
+infra:
+  provider: bicep
+  path: infra
+  module: main
+
+hooks:
+  postprovision:
+    shell: sh
+    run: |
+      echo "✅ Storage account provisioned in Australia"
+      echo "Run 'azd env get-values' to see credentials"
